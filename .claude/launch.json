@@ -4,14 +4,33 @@
     {
       "name": "leihlo-preview",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["vite", "preview", "--port", "4173", "--strictPort"],
+      "runtimeArgs": [
+        "vite",
+        "preview",
+        "--port",
+        "4173",
+        "--strictPort"
+      ],
       "port": 4173
     },
     {
       "name": "leihlo-dev",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["vite", "--port", "5173", "--strictPort"],
+      "runtimeArgs": [
+        "vite",
+        "--port",
+        "5173",
+        "--strictPort"
+      ],
       "port": 5173
+    },
+    {
+      "name": "leihlo-local-sync",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "scripts/local-server.mjs"
+      ],
+      "port": 8888
     }
   ]
 }
