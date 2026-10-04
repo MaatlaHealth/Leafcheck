@@ -58,9 +58,15 @@ async function boot() {
     return;
   }
   initLanguage(isOfficerArea ? 'officer' : 'farmer');
-  document.title = isOfficerArea ? `${t('app_name')}: ${t('officer_title')}` : t('app_name');
+  const updateDocumentTitle = () => {
+    document.title = isOfficerArea ? `${t('app_name')}: ${t('officer_title')}` : t('app_name');
+  };
+  updateDocumentTitle();
 
-  onLanguageChange(() => renderCurrentScreen());
+  onLanguageChange(() => {
+    updateDocumentTitle();
+    renderCurrentScreen();
+  });
   onSyncStatusChange(() => updateAllSyncPills());
   onClassifierChange(() => updateAllClassifierBanners());
   onDataChanged(() => handleDataChanged());

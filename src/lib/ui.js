@@ -23,6 +23,12 @@ export function h(tagName, properties = {}, ...children) {
   return element;
 }
 
+// replaceChildren that skips null and false, so optional parts can be passed inline.
+export function setChildren(element, ...children) {
+  element.replaceChildren();
+  appendChildren(element, children);
+}
+
 function appendChildren(element, children) {
   for (const child of children.flat(Infinity)) {
     if (child === null || child === undefined || child === false) continue;

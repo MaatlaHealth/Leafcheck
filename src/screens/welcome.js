@@ -1,5 +1,5 @@
 // Screen 1: welcome, consent and one time farmer setup.
-import { h, icon, spokenLine, speakerButton } from '../lib/ui.js';
+import { h, icon, setChildren, spokenLine, speakerButton } from '../lib/ui.js';
 import { t } from '../lib/strings.js';
 import { saveFarmerProfile } from '../lib/db.js';
 import { navigate } from '../lib/events.js';
@@ -46,7 +46,7 @@ export async function renderWelcome(container) {
     navigate('check');
   }
 
-  container.replaceChildren(
+  setChildren(container,
     h('section', { class: 'hero' },
       icon('eye', 'hero-icon'),
       h('h1', {}, t('welcome_title')),

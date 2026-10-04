@@ -1,5 +1,5 @@
 // Screen 7: about and limits. Placeholders in strings.json are filled in by the team.
-import { h, icon } from '../lib/ui.js';
+import { h, icon, setChildren } from '../lib/ui.js';
 import { t } from '../lib/strings.js';
 import { getClassifierInfo, initClassifier } from '../lib/classifier.js';
 import { isOfflineReady } from '../lib/events.js';
@@ -21,7 +21,7 @@ export async function renderAbout(container) {
     ? [h('p', {}, t('about_model_real', { labels: classifierInfo.labels.join(', ') }))]
     : [h('p', {}, h('span', { class: 'sim-chip' }, t('simulated_label')), t('about_model_mock'))];
 
-  container.replaceChildren(
+  setChildren(container,
     h('h1', {}, t('about_title')),
     aboutSection('eye', 'about_what_title', ['about_what_body', 'about_human_decides']),
     aboutSection('leaf', 'about_model_title', [], [...modelLines, h('p', {}, t('about_threshold', { percent: thresholdPercent }))]),

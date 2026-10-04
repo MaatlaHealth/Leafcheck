@@ -1,7 +1,7 @@
 // Screen 2 and 3: the guided weekend check.
 // Steps: choose plot zone, then for each of 3 leaves: photo, on-device result. Then the overall result,
 // which is saved on the phone and queued for the extension officer.
-import { h, icon, spokenLine, showToast, classLabel, photoThumbnail, simulatedChip } from '../lib/ui.js';
+import { h, icon, setChildren, spokenLine, showToast, classLabel, photoThumbnail, simulatedChip } from '../lib/ui.js';
 import { t, getLanguage } from '../lib/strings.js';
 import { zoneArtMarkup } from '../lib/icons.js';
 import { playClips } from '../lib/audio.js';
@@ -61,14 +61,14 @@ export async function renderCheck(container, context) {
   const redraw = () => renderCheck(container, context);
 
   if (checkSession.isWorking) {
-    container.replaceChildren(
+    setChildren(container,
       h('div', { class: 'working' }, h('div', { class: 'spinner', 'aria-hidden': 'true' }), h('p', {}, t('checking_leaf'))),
     );
     return;
   }
 
   if (checkSession.step === 'zone') {
-    container.replaceChildren(
+    setChildren(container,
       h('h1', {}, t('check_title')),
       stepIndicator(1),
       spokenLine('zone_prompt', 'leaf'),
@@ -98,7 +98,7 @@ export async function renderCheck(container, context) {
       if (!photoFile) return;
       await analyseLeafPhoto(photoFile, leafIndex, redraw);
     };
-    container.replaceChildren(
+    setChildren(container,
       h('h1', {}, t('leaf_label', { number: leafIndex + 1 })),
       stepIndicator(leafIndex + 2),
       capturedLeafStrip(),
@@ -129,7 +129,7 @@ export async function renderCheck(container, context) {
   if (checkSession.step === 'leafResult') {
     const leaf = checkSession.leaves[checkSession.currentLeafIndex];
     const isLastLeaf = checkSession.currentLeafIndex === LEAVES_PER_CHECK - 1;
-    container.replaceChildren(
+    setChildren(container,
       h('h1', {}, t('leaf_result_title', { number: leaf.index + 1 })),
       stepIndicator(leaf.index + 2),
       classifierNote(),
@@ -168,7 +168,7 @@ export async function renderCheck(container, context) {
 
   if (checkSession.step === 'overall') {
     const savedReport = checkSession.savedReport;
-    container.replaceChildren(
+    setChildren(container,
       h('h1', {}, t('overall_title')),
       classifierNote(),
       capturedLeafStrip(),

@@ -85,6 +85,11 @@ async function detectAndLoadClassifier() {
     if (outputUnits !== modelMetadata.labels.length) {
       throw new Error(`Model has ${outputUnits} outputs but metadata lists ${modelMetadata.labels.length} labels`);
     }
+    // One blank prediction compiles the GPU shaders now, so the farmer's first leaf is quick.
+    const { tf } = tensorflowModule;
+    tf.tidy(() => {
+      layersModel.predict(tf.zeros([1, modelImageSize, modelImageSize, 3]));
+    });
     setClassifierInfo({
       mode: 'model',
       labels: modelMetadata.labels.map(normaliseLabel),
@@ -123,8 +128,8 @@ async function classifyWithModel(photoCanvas) {
   const inputCanvas = centreSquareCrop(photoCanvas, modelImageSize);
   const outputTensor = tf.tidy(() => {
     // Same preprocessing as the Teachable Machine library: scale pixels to the range -1 to 1.
-    const pixels = tf.browser.fromPixels(inputCanvas).toFloat();
-    const normalisedBatch = pixels.div(127).sub(1).expandDims(0);
+    const pixels = tf.cast(tf.browser.fromPixels(inputCanvas), 'float32');
+    const normalisedBatch = tf.expandDims(tf.sub(tf.div(pixels, 127), 1), 0);
     const prediction = layersModel.predict(normalisedBatch);
     return Array.isArray(prediction) ? prediction[0] : prediction;
   });

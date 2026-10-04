@@ -1,6 +1,6 @@
 // Screen 4: My reports. Past checks with their status, the officer answer and the simulated SMS.
 import {
-  h, icon, classLabel, confidenceIndicator, reportStatusBadge, photoThumbnail, smsPreview, showConfirmDialog, showToast,
+  h, icon, setChildren, classLabel, confidenceIndicator, reportStatusBadge, photoThumbnail, smsPreview, showConfirmDialog, showToast,
 } from '../lib/ui.js';
 import { t, getLanguage } from '../lib/strings.js';
 import { getAllReportsNewestFirst, deleteAllLocalData } from '../lib/db.js';
@@ -98,7 +98,7 @@ export async function renderReports(container) {
     navigate('welcome');
   }
 
-  container.replaceChildren(
+  setChildren(container,
     h('h1', {}, t('reports_title')),
     syncCard(redraw),
     reports.length === 0
