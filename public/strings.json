@@ -336,6 +336,14 @@
       "spoken": false
     },
     {
+      "key": "status_online",
+      "section": "common",
+      "english": "Online",
+      "sepedi": "",
+      "audio": "/audio/status_online.mp3",
+      "spoken": false
+    },
+    {
       "key": "status_offline",
       "section": "common",
       "english": "Offline",
@@ -834,7 +842,7 @@
     {
       "key": "sms_intro",
       "section": "sms",
-      "english": "Leihlo: the extension officer checked your report from {date}, {plot}.",
+      "english": "Leihlo {date}, {plot}.",
       "sepedi": "",
       "audio": "/audio/sms_intro.mp3",
       "spoken": false
@@ -842,7 +850,7 @@
     {
       "key": "sms_confirmed",
       "section": "sms",
-      "english": "The officer agrees with the app.",
+      "english": "Your extension officer agrees with the app.",
       "sepedi": "",
       "audio": "/audio/sms_confirmed.mp3",
       "spoken": false
@@ -850,7 +858,7 @@
     {
       "key": "sms_corrected",
       "section": "sms",
-      "english": "The officer changed the app result.",
+      "english": "Your extension officer changed the app result.",
       "sepedi": "",
       "audio": "/audio/sms_corrected.mp3",
       "spoken": false

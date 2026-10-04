@@ -197,7 +197,7 @@ English: This deletes all your data from this phone.
 
 Sepedi: ______________________________________________
 
-## Part 2: text on screen only, no recording needed (155 items)
+## Part 2: text on screen only, no recording needed (156 items)
 
 Words in curly brackets, like {count}, are filled in by the app. Keep them in your translation.
 
@@ -272,6 +272,10 @@ Words in curly brackets, like {count}, are filled in by the app. Keep them in yo
   Sepedi: ______________________________________________
 
 - `button_capture`: Take the photo
+
+  Sepedi: ______________________________________________
+
+- `status_online`: Online
 
   Sepedi: ______________________________________________
 
@@ -535,15 +539,15 @@ Words in curly brackets, like {count}, are filled in by the app. Keep them in yo
 
   Sepedi: ______________________________________________
 
-- `sms_intro`: Leihlo: the extension officer checked your report from {date}, {plot}.
+- `sms_intro`: Leihlo {date}, {plot}.
 
   Sepedi: ______________________________________________
 
-- `sms_confirmed`: The officer agrees with the app.
+- `sms_confirmed`: Your extension officer agrees with the app.
 
   Sepedi: ______________________________________________
 
-- `sms_corrected`: The officer changed the app result.
+- `sms_corrected`: Your extension officer changed the app result.
 
   Sepedi: ______________________________________________
 

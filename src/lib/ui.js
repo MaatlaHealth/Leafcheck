@@ -45,7 +45,7 @@ export function simulatedChip(labelKey = 'simulated_label') {
 }
 
 // Header shown on every screen: brand, sync status and the language toggle.
-export function appHeader() {
+export function appHeader({ area = 'farmer' } = {}) {
   const languageButtons = LANGUAGES.map((language) =>
     h('button', {
       type: 'button',
@@ -54,7 +54,7 @@ export function appHeader() {
       onclick: () => setLanguage(language),
     }, t(`lang_${language}`)),
   );
-  const syncPill = h('div', { class: 'sync-pill', 'data-sync-pill': '', role: 'status' });
+  const syncPill = h('div', { class: 'sync-pill', 'data-sync-pill': area, role: 'status' });
   updateSyncPill(syncPill);
   return h('header', { class: 'app-header' },
     h('div', { class: 'brand' }, icon('eye', 'brand-icon'), h('span', { class: 'brand-name' }, t('app_name'))),
@@ -65,7 +65,13 @@ export function appHeader() {
   );
 }
 
-function syncPillContent(syncStatus) {
+function syncPillContent(syncStatus, area) {
+  // The officer does not have a farmer send queue, so only show the connection.
+  if (area === 'officer') {
+    return syncStatus.isOnline
+      ? { iconName: 'cloudCheck', textKey: 'status_online', tone: 'online' }
+      : { iconName: 'cloudOff', textKey: 'status_offline', tone: 'offline' };
+  }
   if (!syncStatus.isOnline) {
     return syncStatus.waitingCount > 0
       ? { iconName: 'cloudOff', textKey: 'status_offline_saved', tone: 'offline' }
@@ -78,7 +84,7 @@ function syncPillContent(syncStatus) {
 
 function updateSyncPill(syncPill) {
   const syncStatus = getSyncStatus();
-  const { iconName, textKey, tone } = syncPillContent(syncStatus);
+  const { iconName, textKey, tone } = syncPillContent(syncStatus, syncPill.dataset.syncPill);
   syncPill.dataset.tone = tone;
   syncPill.replaceChildren(icon(iconName), h('span', {}, t(textKey, { count: syncStatus.waitingCount })));
 }
