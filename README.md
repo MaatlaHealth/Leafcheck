@@ -36,6 +36,8 @@ Noor grows coffee on a small plot. She owns a basic phone. The household smartph
 
 Every screen has a Sepedi / English toggle in the header. The farmer side starts in Sepedi, the officer page starts in English. The choice is remembered.
 
+Some Sepedi text is a machine draft awaiting review by a native speaker.
+
 ## Tech stack
 
 - Vite and vanilla JavaScript, plain CSS, no UI framework. System fonts only.
@@ -177,12 +179,27 @@ netlify env:set LEIHLO_OFFICER_KEY "choose-a-code"
 netlify deploy --build --prod
 ```
 
-## Adding Sepedi text and audio
+## Sepedi text and audio
 
-1. Open `RECORDING_SCRIPT.md`. Part 1 lists the 23 clips to record. Part 2 lists the screen text that only needs a written translation.
-2. Put each Sepedi text in the `sepedi` field of the same key in `public/strings.json`. Blank fields fall back to English, so the app always works.
+Every entry in `public/strings.json` has Sepedi text and a `sepedi_source` field:
+
+- `human`: written by the team (9 lines, all spoken clips).
+- `machine_draft`: drafted by machine to match the team's vocabulary (171 lines). These need review by a native speaker before real use.
+
+To review and record:
+
+1. Open `RECORDING_SCRIPT.md`. Part 1 lists the 23 clips to record. Part 2 lists the screen text. Machine drafts are marked "(machine draft, check)".
+2. Fix a line in the `sepedi` field of the same key in `public/strings.json`, then set its `sepedi_source` to `human`. Run `npm run recording-script` to refresh the script. A blank field falls back to English, so the app always works.
 3. Save each clip as `public/audio/{key}.mp3`. Optional English clips can go in `public/audio/en/{key}.mp3`.
-4. Run `npm run build` and deploy, so the clips are precached for offline use.
+4. Run `npm run build` and deploy, so the text and clips are precached for offline use.
+
+While any line is still a machine draft, the About and limits page shows "Some Sepedi text is a machine draft awaiting review by a native speaker." The line goes away by itself once every line is marked `human`.
+
+Lines to check first:
+
+- The disease names are descriptive drafts, not settled terms: `class_leaf_rust` is "Bolwetši bja matheba a namune" (orange spot disease) and `class_leaf_miner` is "Diboko tša matlakala" (leaf worms).
+- `leaf_prompt_1` uses "lekhasi" for leaf, while `leaf_prompt_2` and `leaf_prompt_3` use "letlakala". `zone_prompt` uses "plot" while `setup_prompt` uses "ploto". The leaf prompts use "tsea" where the drafts use "tšea". These are team lines, so they were copied without change.
+- In Sepedi mode the English button still says "English", on purpose, so an English speaker can always find it.
 
 A speaker button only appears when its clip exists. There is no text to speech of any kind.
 
@@ -194,14 +211,15 @@ Export a new image model from Teachable Machine ("Export Model", "Tensorflow.js"
 
 - **Mock classifier.** Used only when no model files are present or they fail to load. It is a simple colour rule, not a model. Clearly labelled on every farmer screen and on the officer page. With the current repository the real model is used, so mock mode only appears if `public/model/` is emptied.
 - **SMS.** Nothing is sent. The officer page and My reports show a basic phone style preview labelled "Simulated SMS", with a character and SMS part count.
-- **Sepedi text and audio.** Not written or recorded yet. English is shown until the Sepedi fields are filled in.
+- **Sepedi audio.** Not recorded yet. Speaker buttons stay hidden until the clip files exist.
+- **Most Sepedi text.** 171 of 180 lines are machine drafts awaiting review by a native speaker. They are marked in `public/strings.json` and `RECORDING_SCRIPT.md`.
 - **Single device demo.** When there is no server, the officer page reads the same IndexedDB as the farmer app, so one phone or laptop can show the whole loop.
 - **Access control.** The officer code is a shared secret for the demo, not real login.
 
 ## Decisions made while building
 
 - **One single page app, two areas.** `/` is the farmer app with hash routes, `/officer` is the officer page. One service worker covers both, so the officer page also opens offline.
-- **Sepedi field names.** `public/strings.json` uses `english` and `sepedi` fields so a translator can edit it without knowing language codes. Each entry also has `audio` (`/audio/{key}.mp3`) and `spoken`. Only the 23 `spoken` entries are clips. The other 156 entries are screen text that needs a translation but no recording.
+- **Sepedi field names.** `public/strings.json` uses `english` and `sepedi` fields so a translator can edit it without knowing language codes. Each entry also has `sepedi_source` (`human` or `machine_draft`), `audio` (`/audio/{key}.mp3`) and `spoken`. Only the 23 `spoken` entries are clips. The other 157 entries are screen text that needs a translation but no recording.
 - **Clips per language.** Sepedi clips play when Sepedi is selected. English clips are optional (`/audio/en/`), so English mode does not play Sepedi audio over English text.
 - **Overall result rule.** A confident disease on any leaf wins (leaf rust first on a tie). "Healthy" needs all three leaves confidently healthy. Anything else is "not sure".
 - **Officer decisions are per leaf.** "Confirm" accepts the model's top class for that leaf, even if the farmer was shown "not sure". "Correct" opens a class picker. The report is "Confirmed by officer" only when no leaf was changed and the overall answer matches what the farmer already saw. Otherwise it is "Corrected by officer".
@@ -223,6 +241,7 @@ Automated or scripted checks run during the build:
 | Non-leaf or low confidence photo gives the not sure message and no advice | Passed in mock mode (non-leaf picture: "Not sure, ask the extension officer", no advice item) and with the real model (a test picture whose top class was `not_a_leaf` at 66 percent gave the same). |
 | A Teachable Machine export in `public/model` switches off mock mode with no code change | Passed. With your export in place the banner disappears and reports record `mode: model`. With the folder empty the app runs in labelled mock mode. |
 | The language toggle switches every farmer string | Passed. Filled every Sepedi field of a test build with a marker and scanned every visible text node and accessibility label on the check, result, overall, reports and About screens. All switched, and switched back to English. |
+| With Sepedi selected, no farmer screen shows English | Passed. Built a list of 273 words that appear in the English strings but in none of the Sepedi ones, then scanned every visible text, label and alt text on the welcome screen (with its form error), zone, capture, photo failed message, leaf result, overall result, My reports with an officer SMS, the delete dialog and About. No hits. Two English items stay on purpose: the "English" button in the language toggle and the hackathon name "Small AI for Development". |
 | Officer correction updates the farmer's status and SMS preview | Passed on one device and on two devices through the sync server. |
 | Exported dataset contains the officer's labels | Passed. The corrected leaf was saved under `images/leaf_miner/` with `label: leaf_miner` and `modelTopClass: leaf_rust`. No farmer name in the zip. |
 | No em dashes or en dashes | Passed. `npm run check` scans all source, strings, docs and config. Third party code in `node_modules` and the built TF.js bundle is not ours and is not scanned. |

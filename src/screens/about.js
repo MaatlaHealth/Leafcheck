@@ -1,9 +1,10 @@
 // Screen 7: about and limits. Placeholders in strings.json are filled in by the team.
 import { h, icon, setChildren } from '../lib/ui.js';
-import { t } from '../lib/strings.js';
+import { t, hasMachineDraftSepedi } from '../lib/strings.js';
 import { getClassifierInfo, initClassifier } from '../lib/classifier.js';
 import { isOfflineReady } from '../lib/events.js';
 import { getConfidenceThreshold } from '../config.js';
+import { classNameKey } from '../lib/results.js';
 
 function aboutSection(iconName, titleKey, bodyKeys, extraContent = null) {
   return h('section', { class: 'card about-section' },
@@ -17,8 +18,10 @@ export async function renderAbout(container) {
   await initClassifier();
   const classifierInfo = getClassifierInfo();
   const thresholdPercent = Math.round(getConfidenceThreshold() * 100);
+  // Show class names from strings.json, not the raw model labels, so they follow the language toggle.
+  const classNames = classifierInfo.labels.map((classId) => t(classNameKey(classId))).join(', ');
   const modelLines = classifierInfo.mode === 'model'
-    ? [h('p', {}, t('about_model_real', { labels: classifierInfo.labels.join(', ') }))]
+    ? [h('p', {}, t('about_model_real', { labels: classNames }))]
     : [h('p', {}, h('span', { class: 'sim-chip' }, t('simulated_label')), t('about_model_mock'))];
 
   setChildren(container,
@@ -31,6 +34,7 @@ export async function renderAbout(container) {
     aboutSection('shield', 'about_privacy_title', ['about_privacy_stored', 'about_privacy_sent', 'about_privacy_export']),
     aboutSection('phone', 'about_lost_title', ['about_lost_shared', 'about_lost_lost']),
     aboutSection('cloudOff', 'about_offline_title', [isOfflineReady() ? 'about_offline_ready' : 'about_offline_not_ready']),
+    hasMachineDraftSepedi() ? h('p', { class: 'note' }, icon('alert'), t('about_sepedi_draft')) : null,
     h('p', { class: 'muted center' }, t('about_version')),
     h('a', { href: '/officer', class: 'text-link' }, icon('user'), t('link_officer')),
   );

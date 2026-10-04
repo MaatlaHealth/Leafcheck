@@ -61,6 +61,20 @@ for (const entry of stringsFile.strings) {
 }
 console.log(`  ${spokenCount} spoken clips, ${stringsFile.strings.length} entries`);
 
+console.log('Check 4: Sepedi coverage and sources');
+const SEPEDI_SOURCES = ['human', 'machine_draft'];
+for (const entry of stringsFile.strings) {
+  const hasSepedi = Boolean((entry.sepedi || '').trim());
+  if (hasSepedi && !SEPEDI_SOURCES.includes(entry.sepedi_source)) report(`${entry.key} needs sepedi_source "human" or "machine_draft"`);
+  const placeholderList = (text) => [...text.matchAll(/\{(\w+)\}/g)].map((match) => match[1]).sort().join(',');
+  if (hasSepedi && placeholderList(entry.sepedi) !== placeholderList(entry.english)) report(`${entry.key} Sepedi placeholders differ from English`);
+}
+const humanSepediCount = stringsFile.strings.filter((entry) => entry.sepedi_source === 'human').length;
+const draftSepediCount = stringsFile.strings.filter((entry) => entry.sepedi_source === 'machine_draft').length;
+const blankSepediKeys = stringsFile.strings.filter((entry) => !(entry.sepedi || '').trim()).map((entry) => entry.key);
+console.log(`  ${humanSepediCount} human, ${draftSepediCount} machine_draft, ${blankSepediKeys.length} blank`);
+if (blankSepediKeys.length) console.log(`  note: these keys fall back to English: ${blankSepediKeys.join(', ')}`);
+
 if (problemCount > 0) {
   console.log(`\n${problemCount} problem(s) found.`);
   process.exit(1);

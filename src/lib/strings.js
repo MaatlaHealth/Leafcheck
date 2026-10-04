@@ -51,6 +51,12 @@ export function hasString(key) {
   return stringsByKey.has(key);
 }
 
+// True while any Sepedi line is still a machine draft waiting for a native speaker.
+export function hasMachineDraftSepedi() {
+  for (const entry of stringsByKey.values()) if (entry.sepedi_source === 'machine_draft') return true;
+  return false;
+}
+
 // Sepedi falls back to English when the Sepedi text is still blank.
 export function t(key, placeholderValues = {}, language = currentLanguage) {
   const entry = stringsByKey.get(key);
