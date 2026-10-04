@@ -73,9 +73,13 @@ async function boot() {
   window.addEventListener('hashchange', () => renderCurrentScreen());
 
   await renderCurrentScreen();
-  initClassifier();
-  if (isOfficerArea) refreshWaitingCount();
-  else startAutoSync();
+  if (isOfficerArea) {
+    refreshWaitingCount();
+  } else {
+    // Start loading the model early so the first leaf is quick. The officer page does not need it.
+    initClassifier();
+    startAutoSync();
+  }
 
   if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {});
 }
