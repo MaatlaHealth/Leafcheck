@@ -1,0 +1,1435 @@
+{
+  "_readme": [
+    "Every message Leihlo shows or speaks comes from this file. The app never generates text.",
+    "english: English text. sepedi: Sepedi (Northern Sotho) text. If sepedi is blank the app shows English.",
+    "audio: the recorded Sepedi clip. Only entries with spoken true are played. Optional English clips go in /audio/en/{key}.mp3.",
+    "Words in curly brackets, like {count}, are filled in by the app. Keep them as they are.",
+    "Do not use em dashes or en dashes."
+  ],
+  "strings": [
+    {
+      "key": "welcome_intro",
+      "section": "welcome",
+      "english": "Leihlo helps you check your coffee leaves.",
+      "sepedi": "",
+      "audio": "/audio/welcome_intro.mp3",
+      "spoken": true
+    },
+    {
+      "key": "consent_stored",
+      "section": "welcome",
+      "english": "Your name, photos and results are saved on this phone.",
+      "sepedi": "",
+      "audio": "/audio/consent_stored.mp3",
+      "spoken": true
+    },
+    {
+      "key": "consent_who_sees",
+      "section": "welcome",
+      "english": "Your reports go only to your extension officer.",
+      "sepedi": "",
+      "audio": "/audio/consent_who_sees.mp3",
+      "spoken": true
+    },
+    {
+      "key": "consent_delete",
+      "section": "welcome",
+      "english": "You can delete all your data at any time in My reports.",
+      "sepedi": "",
+      "audio": "/audio/consent_delete.mp3",
+      "spoken": true
+    },
+    {
+      "key": "setup_prompt",
+      "section": "welcome",
+      "english": "Type your name, member number and plot name.",
+      "sepedi": "",
+      "audio": "/audio/setup_prompt.mp3",
+      "spoken": true
+    },
+    {
+      "key": "zone_prompt",
+      "section": "check",
+      "english": "Which part of the plot are you checking?",
+      "sepedi": "",
+      "audio": "/audio/zone_prompt.mp3",
+      "spoken": true
+    },
+    {
+      "key": "leaf_prompt_1",
+      "section": "check",
+      "english": "Take a photo of the first leaf.",
+      "sepedi": "",
+      "audio": "/audio/leaf_prompt_1.mp3",
+      "spoken": true
+    },
+    {
+      "key": "leaf_prompt_2",
+      "section": "check",
+      "english": "Take a photo of the second leaf.",
+      "sepedi": "",
+      "audio": "/audio/leaf_prompt_2.mp3",
+      "spoken": true
+    },
+    {
+      "key": "leaf_prompt_3",
+      "section": "check",
+      "english": "Take a photo of the third leaf.",
+      "sepedi": "",
+      "audio": "/audio/leaf_prompt_3.mp3",
+      "spoken": true
+    },
+    {
+      "key": "photo_tip",
+      "section": "check",
+      "english": "Hold one leaf flat in daylight, close to the camera.",
+      "sepedi": "",
+      "audio": "/audio/photo_tip.mp3",
+      "spoken": true
+    },
+    {
+      "key": "result_healthy",
+      "section": "result",
+      "english": "This leaf looks healthy.",
+      "sepedi": "",
+      "audio": "/audio/result_healthy.mp3",
+      "spoken": true
+    },
+    {
+      "key": "result_leaf_rust",
+      "section": "result",
+      "english": "This leaf may have coffee leaf rust.",
+      "sepedi": "",
+      "audio": "/audio/result_leaf_rust.mp3",
+      "spoken": true
+    },
+    {
+      "key": "result_leaf_miner",
+      "section": "result",
+      "english": "This leaf may have leaf miner damage.",
+      "sepedi": "",
+      "audio": "/audio/result_leaf_miner.mp3",
+      "spoken": true
+    },
+    {
+      "key": "result_not_sure",
+      "section": "result",
+      "english": "Not sure, ask the extension officer.",
+      "sepedi": "",
+      "audio": "/audio/result_not_sure.mp3",
+      "spoken": true
+    },
+    {
+      "key": "advice_healthy",
+      "section": "advice",
+      "english": "Keep checking your trees every week.",
+      "sepedi": "",
+      "audio": "/audio/advice_healthy.mp3",
+      "spoken": true
+    },
+    {
+      "key": "advice_leaf_rust",
+      "section": "advice",
+      "english": "Remove and destroy the affected leaves, then check the trees nearby.",
+      "sepedi": "",
+      "audio": "/audio/advice_leaf_rust.mp3",
+      "spoken": true
+    },
+    {
+      "key": "advice_leaf_miner",
+      "section": "advice",
+      "english": "Remove and destroy the damaged leaves, and tell the cooperative.",
+      "sepedi": "",
+      "audio": "/audio/advice_leaf_miner.mp3",
+      "spoken": true
+    },
+    {
+      "key": "overall_healthy",
+      "section": "result",
+      "english": "All three leaves look healthy.",
+      "sepedi": "",
+      "audio": "/audio/overall_healthy.mp3",
+      "spoken": true
+    },
+    {
+      "key": "overall_leaf_rust",
+      "section": "result",
+      "english": "Some leaves may have coffee leaf rust.",
+      "sepedi": "",
+      "audio": "/audio/overall_leaf_rust.mp3",
+      "spoken": true
+    },
+    {
+      "key": "overall_leaf_miner",
+      "section": "result",
+      "english": "Some leaves may have leaf miner damage.",
+      "sepedi": "",
+      "audio": "/audio/overall_leaf_miner.mp3",
+      "spoken": true
+    },
+    {
+      "key": "report_saved",
+      "section": "result",
+      "english": "Your report is saved and the extension officer will check it.",
+      "sepedi": "",
+      "audio": "/audio/report_saved.mp3",
+      "spoken": true
+    },
+    {
+      "key": "photo_failed",
+      "section": "check",
+      "english": "The photo did not work, please try again.",
+      "sepedi": "",
+      "audio": "/audio/photo_failed.mp3",
+      "spoken": true
+    },
+    {
+      "key": "delete_warning",
+      "section": "reports",
+      "english": "This deletes all your data from this phone.",
+      "sepedi": "",
+      "audio": "/audio/delete_warning.mp3",
+      "spoken": true
+    },
+    {
+      "key": "app_name",
+      "section": "common",
+      "english": "Leihlo",
+      "sepedi": "",
+      "audio": "/audio/app_name.mp3",
+      "spoken": false
+    },
+    {
+      "key": "app_tagline",
+      "section": "common",
+      "english": "The extension officer's eye on your farm.",
+      "sepedi": "",
+      "audio": "/audio/app_tagline.mp3",
+      "spoken": false
+    },
+    {
+      "key": "lang_nso",
+      "section": "common",
+      "english": "Sepedi",
+      "sepedi": "",
+      "audio": "/audio/lang_nso.mp3",
+      "spoken": false
+    },
+    {
+      "key": "lang_en",
+      "section": "common",
+      "english": "English",
+      "sepedi": "",
+      "audio": "/audio/lang_en.mp3",
+      "spoken": false
+    },
+    {
+      "key": "lang_toggle_label",
+      "section": "common",
+      "english": "Language",
+      "sepedi": "",
+      "audio": "/audio/lang_toggle_label.mp3",
+      "spoken": false
+    },
+    {
+      "key": "nav_label",
+      "section": "common",
+      "english": "Main menu",
+      "sepedi": "",
+      "audio": "/audio/nav_label.mp3",
+      "spoken": false
+    },
+    {
+      "key": "nav_check",
+      "section": "common",
+      "english": "Check",
+      "sepedi": "",
+      "audio": "/audio/nav_check.mp3",
+      "spoken": false
+    },
+    {
+      "key": "nav_reports",
+      "section": "common",
+      "english": "My reports",
+      "sepedi": "",
+      "audio": "/audio/nav_reports.mp3",
+      "spoken": false
+    },
+    {
+      "key": "nav_about",
+      "section": "common",
+      "english": "About",
+      "sepedi": "",
+      "audio": "/audio/nav_about.mp3",
+      "spoken": false
+    },
+    {
+      "key": "simulated_label",
+      "section": "common",
+      "english": "Simulated",
+      "sepedi": "",
+      "audio": "/audio/simulated_label.mp3",
+      "spoken": false
+    },
+    {
+      "key": "mock_banner",
+      "section": "common",
+      "english": "Mock mode: no model loaded. Leaf results are simulated.",
+      "sepedi": "",
+      "audio": "/audio/mock_banner.mp3",
+      "spoken": false
+    },
+    {
+      "key": "mock_banner_failed",
+      "section": "common",
+      "english": "The model could not load. Mock mode: leaf results are simulated.",
+      "sepedi": "",
+      "audio": "/audio/mock_banner_failed.mp3",
+      "spoken": false
+    },
+    {
+      "key": "mock_result_note",
+      "section": "common",
+      "english": "This result comes from the simulated classifier, not a real model.",
+      "sepedi": "",
+      "audio": "/audio/mock_result_note.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_play",
+      "section": "common",
+      "english": "Listen",
+      "sepedi": "",
+      "audio": "/audio/button_play.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_replay",
+      "section": "common",
+      "english": "Listen again",
+      "sepedi": "",
+      "audio": "/audio/button_replay.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_cancel",
+      "section": "common",
+      "english": "Cancel",
+      "sepedi": "",
+      "audio": "/audio/button_cancel.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_close",
+      "section": "common",
+      "english": "Close",
+      "sepedi": "",
+      "audio": "/audio/button_close.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_capture",
+      "section": "common",
+      "english": "Take the photo",
+      "sepedi": "",
+      "audio": "/audio/button_capture.mp3",
+      "spoken": false
+    },
+    {
+      "key": "status_offline",
+      "section": "common",
+      "english": "Offline",
+      "sepedi": "",
+      "audio": "/audio/status_offline.mp3",
+      "spoken": false
+    },
+    {
+      "key": "status_offline_saved",
+      "section": "common",
+      "english": "Offline, saved on phone",
+      "sepedi": "",
+      "audio": "/audio/status_offline_saved.mp3",
+      "spoken": false
+    },
+    {
+      "key": "status_sending",
+      "section": "common",
+      "english": "Sending",
+      "sepedi": "",
+      "audio": "/audio/status_sending.mp3",
+      "spoken": false
+    },
+    {
+      "key": "status_waiting_count",
+      "section": "common",
+      "english": "{count} saved, not sent yet",
+      "sepedi": "",
+      "audio": "/audio/status_waiting_count.mp3",
+      "spoken": false
+    },
+    {
+      "key": "status_all_sent",
+      "section": "common",
+      "english": "Online, all sent",
+      "sepedi": "",
+      "audio": "/audio/status_all_sent.mp3",
+      "spoken": false
+    },
+    {
+      "key": "sync_failed",
+      "section": "common",
+      "english": "Could not reach the server. Your reports are safe on this phone.",
+      "sepedi": "",
+      "audio": "/audio/sync_failed.mp3",
+      "spoken": false
+    },
+    {
+      "key": "welcome_title",
+      "section": "welcome",
+      "english": "Welcome to Leihlo",
+      "sepedi": "",
+      "audio": "/audio/welcome_title.mp3",
+      "spoken": false
+    },
+    {
+      "key": "consent_title",
+      "section": "welcome",
+      "english": "Your data",
+      "sepedi": "",
+      "audio": "/audio/consent_title.mp3",
+      "spoken": false
+    },
+    {
+      "key": "setup_title",
+      "section": "welcome",
+      "english": "About you",
+      "sepedi": "",
+      "audio": "/audio/setup_title.mp3",
+      "spoken": false
+    },
+    {
+      "key": "field_name",
+      "section": "welcome",
+      "english": "Your name",
+      "sepedi": "",
+      "audio": "/audio/field_name.mp3",
+      "spoken": false
+    },
+    {
+      "key": "field_member_number",
+      "section": "welcome",
+      "english": "Cooperative member number",
+      "sepedi": "",
+      "audio": "/audio/field_member_number.mp3",
+      "spoken": false
+    },
+    {
+      "key": "field_plot_name",
+      "section": "welcome",
+      "english": "Plot name",
+      "sepedi": "",
+      "audio": "/audio/field_plot_name.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_agree_start",
+      "section": "welcome",
+      "english": "I agree, start",
+      "sepedi": "",
+      "audio": "/audio/button_agree_start.mp3",
+      "spoken": false
+    },
+    {
+      "key": "form_missing_fields",
+      "section": "welcome",
+      "english": "Please fill in all three boxes.",
+      "sepedi": "",
+      "audio": "/audio/form_missing_fields.mp3",
+      "spoken": false
+    },
+    {
+      "key": "check_title",
+      "section": "check",
+      "english": "Weekend crop check",
+      "sepedi": "",
+      "audio": "/audio/check_title.mp3",
+      "spoken": false
+    },
+    {
+      "key": "step_label",
+      "section": "check",
+      "english": "Step {step} of {total}",
+      "sepedi": "",
+      "audio": "/audio/step_label.mp3",
+      "spoken": false
+    },
+    {
+      "key": "zone_upper",
+      "section": "check",
+      "english": "Upper slope",
+      "sepedi": "",
+      "audio": "/audio/zone_upper.mp3",
+      "spoken": false
+    },
+    {
+      "key": "zone_lower",
+      "section": "check",
+      "english": "Lower slope",
+      "sepedi": "",
+      "audio": "/audio/zone_lower.mp3",
+      "spoken": false
+    },
+    {
+      "key": "leaf_label",
+      "section": "check",
+      "english": "Leaf {number}",
+      "sepedi": "",
+      "audio": "/audio/leaf_label.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_take_photo",
+      "section": "check",
+      "english": "Take photo",
+      "sepedi": "",
+      "audio": "/audio/button_take_photo.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_choose_photo",
+      "section": "check",
+      "english": "Choose saved photo",
+      "sepedi": "",
+      "audio": "/audio/button_choose_photo.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_live_camera",
+      "section": "check",
+      "english": "Live camera",
+      "sepedi": "",
+      "audio": "/audio/button_live_camera.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_cancel_check",
+      "section": "check",
+      "english": "Cancel this check",
+      "sepedi": "",
+      "audio": "/audio/button_cancel_check.mp3",
+      "spoken": false
+    },
+    {
+      "key": "checking_leaf",
+      "section": "check",
+      "english": "Checking the leaf",
+      "sepedi": "",
+      "audio": "/audio/checking_leaf.mp3",
+      "spoken": false
+    },
+    {
+      "key": "leaf_result_title",
+      "section": "result",
+      "english": "Leaf {number} result",
+      "sepedi": "",
+      "audio": "/audio/leaf_result_title.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_retake",
+      "section": "result",
+      "english": "Retake",
+      "sepedi": "",
+      "audio": "/audio/button_retake.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_next_leaf",
+      "section": "result",
+      "english": "Next leaf",
+      "sepedi": "",
+      "audio": "/audio/button_next_leaf.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_see_overall",
+      "section": "result",
+      "english": "See overall result",
+      "sepedi": "",
+      "audio": "/audio/button_see_overall.mp3",
+      "spoken": false
+    },
+    {
+      "key": "overall_title",
+      "section": "result",
+      "english": "Overall result",
+      "sepedi": "",
+      "audio": "/audio/overall_title.mp3",
+      "spoken": false
+    },
+    {
+      "key": "confidence_label",
+      "section": "result",
+      "english": "Confidence",
+      "sepedi": "",
+      "audio": "/audio/confidence_label.mp3",
+      "spoken": false
+    },
+    {
+      "key": "confidence_high",
+      "section": "result",
+      "english": "High",
+      "sepedi": "",
+      "audio": "/audio/confidence_high.mp3",
+      "spoken": false
+    },
+    {
+      "key": "confidence_medium",
+      "section": "result",
+      "english": "Medium",
+      "sepedi": "",
+      "audio": "/audio/confidence_medium.mp3",
+      "spoken": false
+    },
+    {
+      "key": "confidence_not_sure",
+      "section": "result",
+      "english": "Not sure",
+      "sepedi": "",
+      "audio": "/audio/confidence_not_sure.mp3",
+      "spoken": false
+    },
+    {
+      "key": "next_step_label",
+      "section": "result",
+      "english": "Next step",
+      "sepedi": "",
+      "audio": "/audio/next_step_label.mp3",
+      "spoken": false
+    },
+    {
+      "key": "not_final_note",
+      "section": "result",
+      "english": "This is not the final answer. The extension officer makes the final call.",
+      "sepedi": "",
+      "audio": "/audio/not_final_note.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_done",
+      "section": "result",
+      "english": "Done",
+      "sepedi": "",
+      "audio": "/audio/button_done.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_new_check",
+      "section": "result",
+      "english": "New check",
+      "sepedi": "",
+      "audio": "/audio/button_new_check.mp3",
+      "spoken": false
+    },
+    {
+      "key": "photo_alt",
+      "section": "result",
+      "english": "Leaf photo {number}",
+      "sepedi": "",
+      "audio": "/audio/photo_alt.mp3",
+      "spoken": false
+    },
+    {
+      "key": "class_healthy",
+      "section": "classes",
+      "english": "Healthy",
+      "sepedi": "",
+      "audio": "/audio/class_healthy.mp3",
+      "spoken": false
+    },
+    {
+      "key": "class_leaf_rust",
+      "section": "classes",
+      "english": "Coffee leaf rust",
+      "sepedi": "",
+      "audio": "/audio/class_leaf_rust.mp3",
+      "spoken": false
+    },
+    {
+      "key": "class_leaf_miner",
+      "section": "classes",
+      "english": "Leaf miner",
+      "sepedi": "",
+      "audio": "/audio/class_leaf_miner.mp3",
+      "spoken": false
+    },
+    {
+      "key": "class_not_a_leaf",
+      "section": "classes",
+      "english": "Not a leaf",
+      "sepedi": "",
+      "audio": "/audio/class_not_a_leaf.mp3",
+      "spoken": false
+    },
+    {
+      "key": "class_unknown",
+      "section": "classes",
+      "english": "Unknown",
+      "sepedi": "",
+      "audio": "/audio/class_unknown.mp3",
+      "spoken": false
+    },
+    {
+      "key": "reports_title",
+      "section": "reports",
+      "english": "My reports",
+      "sepedi": "",
+      "audio": "/audio/reports_title.mp3",
+      "spoken": false
+    },
+    {
+      "key": "reports_empty",
+      "section": "reports",
+      "english": "No checks yet.",
+      "sepedi": "",
+      "audio": "/audio/reports_empty.mp3",
+      "spoken": false
+    },
+    {
+      "key": "report_status_saved",
+      "section": "reports",
+      "english": "Saved on phone",
+      "sepedi": "",
+      "audio": "/audio/report_status_saved.mp3",
+      "spoken": false
+    },
+    {
+      "key": "report_status_sent",
+      "section": "reports",
+      "english": "Sent",
+      "sepedi": "",
+      "audio": "/audio/report_status_sent.mp3",
+      "spoken": false
+    },
+    {
+      "key": "report_status_confirmed",
+      "section": "reports",
+      "english": "Confirmed by officer",
+      "sepedi": "",
+      "audio": "/audio/report_status_confirmed.mp3",
+      "spoken": false
+    },
+    {
+      "key": "report_status_corrected",
+      "section": "reports",
+      "english": "Corrected by officer",
+      "sepedi": "",
+      "audio": "/audio/report_status_corrected.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_sync_now",
+      "section": "reports",
+      "english": "Send now",
+      "sepedi": "",
+      "audio": "/audio/button_sync_now.mp3",
+      "spoken": false
+    },
+    {
+      "key": "model_answer_label",
+      "section": "reports",
+      "english": "App result",
+      "sepedi": "",
+      "audio": "/audio/model_answer_label.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_answer_label",
+      "section": "reports",
+      "english": "Officer answer",
+      "sepedi": "",
+      "audio": "/audio/officer_answer_label.mp3",
+      "spoken": false
+    },
+    {
+      "key": "waiting_for_officer",
+      "section": "reports",
+      "english": "Waiting for the extension officer.",
+      "sepedi": "",
+      "audio": "/audio/waiting_for_officer.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_delete_all",
+      "section": "reports",
+      "english": "Delete all my data",
+      "sepedi": "",
+      "audio": "/audio/button_delete_all.mp3",
+      "spoken": false
+    },
+    {
+      "key": "delete_confirm_title",
+      "section": "reports",
+      "english": "Delete everything?",
+      "sepedi": "",
+      "audio": "/audio/delete_confirm_title.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_delete_confirm",
+      "section": "reports",
+      "english": "Yes, delete",
+      "sepedi": "",
+      "audio": "/audio/button_delete_confirm.mp3",
+      "spoken": false
+    },
+    {
+      "key": "delete_done",
+      "section": "reports",
+      "english": "All your data is deleted from this phone.",
+      "sepedi": "",
+      "audio": "/audio/delete_done.mp3",
+      "spoken": false
+    },
+    {
+      "key": "delete_server_note",
+      "section": "reports",
+      "english": "This also removes your sent reports from the server, if the phone is online now.",
+      "sepedi": "",
+      "audio": "/audio/delete_server_note.mp3",
+      "spoken": false
+    },
+    {
+      "key": "sms_simulated_label",
+      "section": "sms",
+      "english": "Simulated SMS",
+      "sepedi": "",
+      "audio": "/audio/sms_simulated_label.mp3",
+      "spoken": false
+    },
+    {
+      "key": "sms_preview_caption",
+      "section": "sms",
+      "english": "What the farmer gets on a basic phone.",
+      "sepedi": "",
+      "audio": "/audio/sms_preview_caption.mp3",
+      "spoken": false
+    },
+    {
+      "key": "sms_from",
+      "section": "sms",
+      "english": "Leihlo",
+      "sepedi": "",
+      "audio": "/audio/sms_from.mp3",
+      "spoken": false
+    },
+    {
+      "key": "sms_length",
+      "section": "sms",
+      "english": "{count} characters, {parts} SMS",
+      "sepedi": "",
+      "audio": "/audio/sms_length.mp3",
+      "spoken": false
+    },
+    {
+      "key": "sms_intro",
+      "section": "sms",
+      "english": "Leihlo: the extension officer checked your report from {date}, {plot}.",
+      "sepedi": "",
+      "audio": "/audio/sms_intro.mp3",
+      "spoken": false
+    },
+    {
+      "key": "sms_confirmed",
+      "section": "sms",
+      "english": "The officer agrees with the app.",
+      "sepedi": "",
+      "audio": "/audio/sms_confirmed.mp3",
+      "spoken": false
+    },
+    {
+      "key": "sms_corrected",
+      "section": "sms",
+      "english": "The officer changed the app result.",
+      "sepedi": "",
+      "audio": "/audio/sms_corrected.mp3",
+      "spoken": false
+    },
+    {
+      "key": "sms_result",
+      "section": "sms",
+      "english": "Result: {result}.",
+      "sepedi": "",
+      "audio": "/audio/sms_result.mp3",
+      "spoken": false
+    },
+    {
+      "key": "sms_next_step",
+      "section": "sms",
+      "english": "Next step: {advice}",
+      "sepedi": "",
+      "audio": "/audio/sms_next_step.mp3",
+      "spoken": false
+    },
+    {
+      "key": "sms_note",
+      "section": "sms",
+      "english": "Note: {note}",
+      "sepedi": "",
+      "audio": "/audio/sms_note.mp3",
+      "spoken": false
+    },
+    {
+      "key": "note_none",
+      "section": "officer",
+      "english": "No note",
+      "sepedi": "",
+      "audio": "/audio/note_none.mp3",
+      "spoken": false
+    },
+    {
+      "key": "note_visit",
+      "section": "officer",
+      "english": "I will visit your farm soon.",
+      "sepedi": "",
+      "audio": "/audio/note_visit.mp3",
+      "spoken": false
+    },
+    {
+      "key": "note_clearer_photos",
+      "section": "officer",
+      "english": "Please take clearer photos next time.",
+      "sepedi": "",
+      "audio": "/audio/note_clearer_photos.mp3",
+      "spoken": false
+    },
+    {
+      "key": "note_bring_sample",
+      "section": "officer",
+      "english": "Please bring a leaf sample to the cooperative.",
+      "sepedi": "",
+      "audio": "/audio/note_bring_sample.mp3",
+      "spoken": false
+    },
+    {
+      "key": "note_keep_checking",
+      "section": "officer",
+      "english": "Good work, keep checking every week.",
+      "sepedi": "",
+      "audio": "/audio/note_keep_checking.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_title",
+      "section": "officer",
+      "english": "Officer review",
+      "sepedi": "",
+      "audio": "/audio/officer_title.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_intro",
+      "section": "officer",
+      "english": "Check each leaf. Confirm the app result or correct it.",
+      "sepedi": "",
+      "audio": "/audio/officer_intro.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_demo_note",
+      "section": "officer",
+      "english": "Single device demo: reports made on this device appear here, even without a network.",
+      "sepedi": "",
+      "audio": "/audio/officer_demo_note.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_labelled_count",
+      "section": "officer",
+      "english": "Labelled photos on this device: {count}",
+      "sepedi": "",
+      "audio": "/audio/officer_labelled_count.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_export",
+      "section": "officer",
+      "english": "Export corrected dataset",
+      "sepedi": "",
+      "audio": "/audio/button_export.mp3",
+      "spoken": false
+    },
+    {
+      "key": "export_empty",
+      "section": "officer",
+      "english": "No labelled photos yet.",
+      "sepedi": "",
+      "audio": "/audio/export_empty.mp3",
+      "spoken": false
+    },
+    {
+      "key": "export_done",
+      "section": "officer",
+      "english": "Dataset exported: {count} photos.",
+      "sepedi": "",
+      "audio": "/audio/export_done.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_server_title",
+      "section": "officer",
+      "english": "Server",
+      "sepedi": "",
+      "audio": "/audio/officer_server_title.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_key_label",
+      "section": "officer",
+      "english": "Officer access code",
+      "sepedi": "",
+      "audio": "/audio/officer_key_label.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_fetch",
+      "section": "officer",
+      "english": "Get reports from server",
+      "sepedi": "",
+      "audio": "/audio/officer_fetch.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_fetch_done",
+      "section": "officer",
+      "english": "{count} new reports from the server.",
+      "sepedi": "",
+      "audio": "/audio/officer_fetch_done.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_fetch_failed",
+      "section": "officer",
+      "english": "Could not reach the server. Showing reports on this device.",
+      "sepedi": "",
+      "audio": "/audio/officer_fetch_failed.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_tab_waiting",
+      "section": "officer",
+      "english": "Waiting ({count})",
+      "sepedi": "",
+      "audio": "/audio/officer_tab_waiting.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_tab_done",
+      "section": "officer",
+      "english": "Done ({count})",
+      "sepedi": "",
+      "audio": "/audio/officer_tab_done.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_queue_empty",
+      "section": "officer",
+      "english": "No reports waiting.",
+      "sepedi": "",
+      "audio": "/audio/officer_queue_empty.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_done_empty",
+      "section": "officer",
+      "english": "No checked reports yet.",
+      "sepedi": "",
+      "audio": "/audio/officer_done_empty.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_source_device",
+      "section": "officer",
+      "english": "On this device",
+      "sepedi": "",
+      "audio": "/audio/officer_source_device.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_source_server",
+      "section": "officer",
+      "english": "From server",
+      "sepedi": "",
+      "audio": "/audio/officer_source_server.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_farmer_line",
+      "section": "officer",
+      "english": "{name}, member number {member}, plot {plot}",
+      "sepedi": "",
+      "audio": "/audio/officer_farmer_line.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_classifier_mock",
+      "section": "officer",
+      "english": "Mock classifier",
+      "sepedi": "",
+      "audio": "/audio/officer_classifier_mock.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_classifier_model",
+      "section": "officer",
+      "english": "On-device model",
+      "sepedi": "",
+      "audio": "/audio/officer_classifier_model.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_app_overall",
+      "section": "officer",
+      "english": "App overall result",
+      "sepedi": "",
+      "audio": "/audio/officer_app_overall.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_model_result",
+      "section": "officer",
+      "english": "Model top class: {result}, {percent} percent",
+      "sepedi": "",
+      "audio": "/audio/officer_model_result.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_confirm",
+      "section": "officer",
+      "english": "Confirm",
+      "sepedi": "",
+      "audio": "/audio/button_confirm.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_correct",
+      "section": "officer",
+      "english": "Correct",
+      "sepedi": "",
+      "audio": "/audio/button_correct.mp3",
+      "spoken": false
+    },
+    {
+      "key": "correct_pick_class",
+      "section": "officer",
+      "english": "Correct class",
+      "sepedi": "",
+      "audio": "/audio/correct_pick_class.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_final_label",
+      "section": "officer",
+      "english": "Officer label",
+      "sepedi": "",
+      "audio": "/audio/officer_final_label.mp3",
+      "spoken": false
+    },
+    {
+      "key": "note_label",
+      "section": "officer",
+      "english": "Note for the farmer (optional)",
+      "sepedi": "",
+      "audio": "/audio/note_label.mp3",
+      "spoken": false
+    },
+    {
+      "key": "button_send_decision",
+      "section": "officer",
+      "english": "Save and send to farmer",
+      "sepedi": "",
+      "audio": "/audio/button_send_decision.mp3",
+      "spoken": false
+    },
+    {
+      "key": "decision_pending_leaves",
+      "section": "officer",
+      "english": "Confirm or correct every leaf first.",
+      "sepedi": "",
+      "audio": "/audio/decision_pending_leaves.mp3",
+      "spoken": false
+    },
+    {
+      "key": "decision_saved",
+      "section": "officer",
+      "english": "Saved. The farmer's report is updated.",
+      "sepedi": "",
+      "audio": "/audio/decision_saved.mp3",
+      "spoken": false
+    },
+    {
+      "key": "decision_sync_failed",
+      "section": "officer",
+      "english": "Saved on this device. The server could not be reached.",
+      "sepedi": "",
+      "audio": "/audio/decision_sync_failed.mp3",
+      "spoken": false
+    },
+    {
+      "key": "officer_decided_on",
+      "section": "officer",
+      "english": "Checked on {date}",
+      "sepedi": "",
+      "audio": "/audio/officer_decided_on.mp3",
+      "spoken": false
+    },
+    {
+      "key": "link_farmer_app",
+      "section": "officer",
+      "english": "Farmer app",
+      "sepedi": "",
+      "audio": "/audio/link_farmer_app.mp3",
+      "spoken": false
+    },
+    {
+      "key": "link_officer",
+      "section": "officer",
+      "english": "Officer review",
+      "sepedi": "",
+      "audio": "/audio/link_officer.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_title",
+      "section": "about",
+      "english": "About and limits",
+      "sepedi": "",
+      "audio": "/audio/about_title.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_what_title",
+      "section": "about",
+      "english": "What Leihlo does",
+      "sepedi": "",
+      "audio": "/audio/about_what_title.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_what_body",
+      "section": "about",
+      "english": "Leihlo looks at photos of coffee leaves on this phone and gives a first result with one next step.",
+      "sepedi": "",
+      "audio": "/audio/about_what_body.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_human_decides",
+      "section": "about",
+      "english": "It does not decide anything. The extension officer checks every report and makes the final call.",
+      "sepedi": "",
+      "audio": "/audio/about_human_decides.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_model_title",
+      "section": "about",
+      "english": "Leaf checker",
+      "sepedi": "",
+      "audio": "/audio/about_model_title.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_model_mock",
+      "section": "about",
+      "english": "Mock mode. No model files are installed, so a simple colour rule stands in for the model.",
+      "sepedi": "",
+      "audio": "/audio/about_model_mock.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_model_real",
+      "section": "about",
+      "english": "On-device model. Classes: {labels}.",
+      "sepedi": "",
+      "audio": "/audio/about_model_real.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_threshold",
+      "section": "about",
+      "english": "Results below {percent} percent confidence show as not sure.",
+      "sepedi": "",
+      "audio": "/audio/about_threshold.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_data_title",
+      "section": "about",
+      "english": "Data sources",
+      "sepedi": "",
+      "audio": "/audio/about_data_title.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_data_source",
+      "section": "about",
+      "english": "Training images: [dataset name and link, to be added]",
+      "sepedi": "",
+      "audio": "/audio/about_data_source.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_data_license",
+      "section": "about",
+      "english": "License: [license, to be added]",
+      "sepedi": "",
+      "audio": "/audio/about_data_license.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_data_size",
+      "section": "about",
+      "english": "Dataset size: [number of images per class, to be added]",
+      "sepedi": "",
+      "audio": "/audio/about_data_size.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_limits_title",
+      "section": "about",
+      "english": "What the data does not cover",
+      "sepedi": "",
+      "audio": "/audio/about_limits_title.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_limits_fields",
+      "section": "about",
+      "english": "The training photos were not taken on your farm.",
+      "sepedi": "",
+      "audio": "/audio/about_limits_fields.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_limits_conditions",
+      "section": "about",
+      "english": "Light, coffee variety and local diseases here may be different.",
+      "sepedi": "",
+      "audio": "/audio/about_limits_conditions.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_limits_classes",
+      "section": "about",
+      "english": "The app only knows healthy leaves, coffee leaf rust and leaf miner. Anything else shows as not sure.",
+      "sepedi": "",
+      "audio": "/audio/about_limits_classes.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_advice_title",
+      "section": "about",
+      "english": "Advice",
+      "sepedi": "",
+      "audio": "/audio/about_advice_title.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_advice_draft",
+      "section": "about",
+      "english": "The advice list is a draft. The extension service must check it before real use.",
+      "sepedi": "",
+      "audio": "/audio/about_advice_draft.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_privacy_title",
+      "section": "about",
+      "english": "Privacy",
+      "sepedi": "",
+      "audio": "/audio/about_privacy_title.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_privacy_stored",
+      "section": "about",
+      "english": "Your name, member number, plot name and photos are stored on this phone.",
+      "sepedi": "",
+      "audio": "/audio/about_privacy_stored.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_privacy_sent",
+      "section": "about",
+      "english": "Reports are sent only to the extension officer's server. There are no ads and no tracking.",
+      "sepedi": "",
+      "audio": "/audio/about_privacy_sent.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_privacy_export",
+      "section": "about",
+      "english": "Exported training data has photos and labels only, with no names or member numbers.",
+      "sepedi": "",
+      "audio": "/audio/about_privacy_export.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_lost_title",
+      "section": "about",
+      "english": "If the phone is lost or shared",
+      "sepedi": "",
+      "audio": "/audio/about_lost_title.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_lost_shared",
+      "section": "about",
+      "english": "Anyone who opens the app on this phone can see your reports. Use Delete all my data before you hand the phone on.",
+      "sepedi": "",
+      "audio": "/audio/about_lost_shared.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_lost_lost",
+      "section": "about",
+      "english": "If the phone is lost, ask the extension officer to remove your reports from the server.",
+      "sepedi": "",
+      "audio": "/audio/about_lost_lost.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_offline_title",
+      "section": "about",
+      "english": "Works without network",
+      "sepedi": "",
+      "audio": "/audio/about_offline_title.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_offline_ready",
+      "section": "about",
+      "english": "Ready to work offline.",
+      "sepedi": "",
+      "audio": "/audio/about_offline_ready.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_offline_not_ready",
+      "section": "about",
+      "english": "Still saving files for offline use. Open the app once on a network.",
+      "sepedi": "",
+      "audio": "/audio/about_offline_not_ready.mp3",
+      "spoken": false
+    },
+    {
+      "key": "about_version",
+      "section": "about",
+      "english": "Prototype for the Small AI for Development hackathon.",
+      "sepedi": "",
+      "audio": "/audio/about_version.mp3",
+      "spoken": false
+    }
+  ]
+}
